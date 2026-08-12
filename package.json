@@ -1,0 +1,34 @@
+{
+  "name": "topluyosdk",
+  "version": "1.0.0",
+  "description": "Topluyo Api TypeScript/JavaScript SDK",
+  "author": "emrullahctrl",
+  "license": "MIT",
+  "keywords": [
+    "topluyo",
+    "sdk",
+    "api",
+    "typescript",
+    "javascript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emrullahctrl/topluyosdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/emrullahctrl/topluyosdk/issues"
+  },
+  "homepage": "https://github.com/emrullahctrl/topluyosdk#readme",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
