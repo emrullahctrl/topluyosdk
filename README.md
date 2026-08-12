@@ -130,26 +130,38 @@ createPost();
 
 Topluyo SDK, platformun sunduğu API uç noktalarını modüler yapılar halinde sunar.
 
-| Modül                  | Açıklama                                              |
-| ---------------------- | ----------------------------------------------------- |
-| `topluyo.channel`      | Kanal oluşturma, yönetme ve kanal ayarları            |
-| `topluyo.group`        | Grup yönetimi ve grup detayları                       |
-| `topluyo.user`         | Kullanıcı profili, kimlik doğrulama ve hesap ayarları |
-| `topluyo.post`         | Gönderi oluşturma, listeleme ve yönetme               |
-| `topluyo.message`      | Sohbet ve mesaj işlemleri                             |
-| `topluyo.market`       | Uygulama pazarı ve revizyon işlemleri                 |
-| `topluyo.role`         | Rol yönetimi                                          |
-| `topluyo.permission`   | Yetki ve izin yönetimi                                |
-| `topluyo.team`         | Takım işlemleri                                       |
-| `topluyo.member`       | Takım ve grup üyesi işlemleri                         |
-| `topluyo.notification` | Bildirim yönetimi                                     |
-| `topluyo.turbo`        | Turbo transferleri ve transfer geçmişi                |
-| `topluyo.park`         | Park işlemleri                                        |
-| `topluyo.pass`         | Pass işlemleri                                        |
-| `topluyo.public`       | Genel/public API işlemleri                            |
-| `topluyo.test`         | Test amaçlı API işlemleri                             |
+| Modül                  | Açıklama                                        |
+| ---------------------- | ----------------------------------------------- |
+| `topluyo.channel`      | Kanal oluşturma, yönetme ve kanal işlemleri     |
+| `topluyo.crew`         | Crew işlemleri ve yönetimi                      |
+| `topluyo.favorite`     | Favori işlemleri                                |
+| `topluyo.friend`       | Arkadaşlık ve arkadaş işlemleri                 |
+| `topluyo.group`        | Grup yönetimi ve grup işlemleri                 |
+| `topluyo.market`       | Uygulama pazarı ve market işlemleri             |
+| `topluyo.member`       | Üye işlemleri ve yönetimi                       |
+| `topluyo.message`      | Mesajlaşma ve sohbet işlemleri                  |
+| `topluyo.notification` | Bildirim işlemleri ve yönetimi                  |
+| `topluyo.park`         | Park işlemleri                                  |
+| `topluyo.pass`         | Pass işlemleri                                  |
+| `topluyo.permission`   | Yetki ve izin yönetimi                          |
+| `topluyo.post`         | Gönderi oluşturma, listeleme ve yönetme         |
+| `topluyo.public`       | Genel ve herkese açık API işlemleri             |
+| `topluyo.role`         | Rol oluşturma ve rol yönetimi                   |
+| `topluyo.team`         | Takım işlemleri ve yönetimi                     |
+| `topluyo.test`         | Test amaçlı API işlemleri                       |
+| `topluyo.turbo`        | Turbo transferleri ve transfer geçmişi          |
+| `topluyo.user`         | Kullanıcı profili, hesap ve kullanıcı işlemleri |
 
-> SDK'nın kapsamı geliştikçe yeni modüller eklenebilir.
+### ⚙️ Altyapı
+
+SDK'nın API modüllerinin yanı sıra aşağıdaki temel bileşenleri de bulunur:
+
+* `Client` — SDK istemcisinin temel yapısı
+* `RestClient` — HTTP isteklerinin yönetimi
+* `types` — SDK genelinde kullanılan TypeScript tipleri
+* `index` — SDK'nın ana giriş noktası
+
+> Yeni API modülleri eklendikçe bu liste de güncellenecektir.
 
 ---
 
