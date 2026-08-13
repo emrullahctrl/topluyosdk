@@ -1,0 +1,35 @@
+import { ChannelApi } from "./channelApi";
+import { GroupApi } from "./groupApi";
+import { MarketApi } from "./marketApi";
+import { MemberApi } from "./memberApi";
+import { MessageApi } from "./messageApi";
+import { NotificationApi } from "./notificationApi";
+import { ParkApi } from "./parkApi";
+import { PassApi } from "./passApi";
+import { PermissionApi } from "./permissionApi";
+import { PostApi } from "./postApi";
+import { PublicApi } from "./publicApi";
+import { RoleApi } from "./roleApi";
+import { TeamApi } from "./teamApi";
+import { TestApi } from "./testApi";
+import { TurboApi } from "./turboApi";
+import { UserApi } from "./userApi";
+export declare class TopluyoSDK {
+    channel: ChannelApi;
+    group: GroupApi;
+    market: MarketApi;
+    member: MemberApi;
+    message: MessageApi;
+    notification: NotificationApi;
+    park: ParkApi;
+    pass: PassApi;
+    permission: PermissionApi;
+    post: PostApi;
+    public: PublicApi;
+    role: RoleApi;
+    team: TeamApi;
+    test: TestApi;
+    turbo: TurboApi;
+    user: UserApi;
+    constructor(token: string);
+}
