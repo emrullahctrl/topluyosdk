@@ -44,7 +44,10 @@ class GroupApi {
         return this.rest.post("/!api/group/popular", {});
     }
     async set(groupId, options) {
-        return this.rest.post("/!api/group/set", { group_id: groupId, ...options });
+        return this.rest.post("/!api/group/set", {
+            group_id: groupId,
+            ...options
+        });
     }
     async setHome(groupId, homeContent) {
         return this.rest.post("/!api/group/set/home", {
@@ -71,9 +74,8 @@ class GroupApi {
         });
     }
     async sort(groupIds) {
-        const formattedIds = Array.isArray(groupIds) ? groupIds.join(",") : groupIds;
         return this.rest.post("/!api/group/sort", {
-            group_ids: formattedIds
+            group_ids: groupIds.join(",")
         });
     }
 }

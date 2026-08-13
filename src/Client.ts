@@ -15,6 +15,9 @@ import { TeamApi } from "./teamApi";
 import { TestApi } from "./testApi";
 import { TurboApi } from "./turboApi";
 import { UserApi } from "./userApi";
+import { CrewApi } from "./crewApi";
+import { FavoriteApi } from "./favoriteApi";
+import { FriendApi } from "./friendApi";
 
 export class TopluyoSDK {
     public channel: ChannelApi;
@@ -33,6 +36,9 @@ export class TopluyoSDK {
     public test: TestApi;
     public turbo: TurboApi;
     public user: UserApi;
+    public crew: CrewApi;
+    public favorite: FavoriteApi;
+    public friend: FriendApi;
 
     constructor(token: string) {
         const rest = new RestClient(token);
@@ -53,5 +59,8 @@ export class TopluyoSDK {
         this.test = new TestApi(rest);
         this.turbo = new TurboApi(rest);
         this.user = new UserApi(rest);
+        this.crew = new CrewApi(rest);
+        this.favorite = new FavoriteApi(rest);
+        this.friend = new FriendApi(rest)
     }
 }

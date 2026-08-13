@@ -28,5 +28,5 @@ export declare class CrewApi {
     leave(crewId: number): Promise<import("./types").ApiResponse<unknown>>;
     list(groupId: number): Promise<import("./types").ApiResponse<CrewData[]>>;
     set(crewId: number, options: SetCrewOptions): Promise<import("./types").ApiResponse<unknown>>;
-    sort(groupId: number, crewIds: string): Promise<import("./types").ApiResponse<unknown>>;
+    sort(groupId: number, crewIds: number[]): Promise<import("./types").ApiResponse<unknown>>;
 }

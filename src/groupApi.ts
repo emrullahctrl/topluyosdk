@@ -33,21 +33,21 @@ export interface GroupSocialsOptions {
 }
 
 export class GroupApi {
-    constructor(private rest: RestClient) {}
+    constructor(private rest: RestClient) { }
 
     async add(options: CreateGroupOptions) {
         return this.rest.post<number>("/!api/group/add", options);
     }
 
     async delete(groupId: number) {
-        return this.rest.post("/!api/group/del", { 
-            group_id: groupId 
+        return this.rest.post("/!api/group/del", {
+            group_id: groupId
         });
     }
 
     async founder(groupId: number) {
-        return this.rest.post<UserData>("/!api/group/founder", { 
-            group_id: groupId 
+        return this.rest.post<UserData>("/!api/group/founder", {
+            group_id: groupId
         });
     }
 
@@ -83,42 +83,44 @@ export class GroupApi {
         return this.rest.post<GroupData[]>("/!api/group/popular", {});
     }
 
-    async set(groupId: number, options: any) {
-        return this.rest.post("/!api/group/set", { group_id: groupId, ...options });
+    async set(groupId: number, options: Record<string, unknown>) {
+        return this.rest.post("/!api/group/set", {
+            group_id: groupId,
+            ...options
+        });
     }
 
     async setHome(groupId: number, homeContent: string) {
-        return this.rest.post("/!api/group/set/home", { 
-            group_id: groupId, 
-            home: homeContent 
+        return this.rest.post("/!api/group/set/home", {
+            group_id: groupId,
+            home: homeContent
         });
     }
 
     async setPermissions(groupId: number, options: GroupPermissionsOptions) {
-        return this.rest.post("/!api/group/set/permissions", { 
-            group_id: groupId, 
-            ...options 
+        return this.rest.post("/!api/group/set/permissions", {
+            group_id: groupId,
+            ...options
         });
     }
 
     async setProfile(groupId: number, options: GroupProfileOptions) {
-        return this.rest.post("/!api/group/set/profile", { 
-            group_id: groupId, 
-            ...options 
+        return this.rest.post("/!api/group/set/profile", {
+            group_id: groupId,
+            ...options
         });
     }
 
     async setSocials(groupId: number, options: GroupSocialsOptions) {
-        return this.rest.post("/!api/group/set/socials", { 
+        return this.rest.post("/!api/group/set/socials", {
             group_id: groupId, // API payload'unda yazmasa bile backend muhtemelen bunu bekleyecektir
-            ...options 
+            ...options
         });
     }
 
-    async sort(groupIds: number[] | string) {
-        const formattedIds = Array.isArray(groupIds) ? groupIds.join(",") : groupIds;
+    async sort(groupIds: number[]) {
         return this.rest.post("/!api/group/sort", {
-            group_ids: formattedIds
+            group_ids: groupIds.join(",")
         });
     }
 }

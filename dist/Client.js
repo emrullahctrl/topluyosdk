@@ -18,6 +18,9 @@ const teamApi_1 = require("./teamApi");
 const testApi_1 = require("./testApi");
 const turboApi_1 = require("./turboApi");
 const userApi_1 = require("./userApi");
+const crewApi_1 = require("./crewApi");
+const favoriteApi_1 = require("./favoriteApi");
+const friendApi_1 = require("./friendApi");
 class TopluyoSDK {
     channel;
     group;
@@ -35,6 +38,9 @@ class TopluyoSDK {
     test;
     turbo;
     user;
+    crew;
+    favorite;
+    friend;
     constructor(token) {
         const rest = new RestClient_1.RestClient(token);
         this.channel = new channelApi_1.ChannelApi(rest);
@@ -53,6 +59,9 @@ class TopluyoSDK {
         this.test = new testApi_1.TestApi(rest);
         this.turbo = new turboApi_1.TurboApi(rest);
         this.user = new userApi_1.UserApi(rest);
+        this.crew = new crewApi_1.CrewApi(rest);
+        this.favorite = new favoriteApi_1.FavoriteApi(rest);
+        this.friend = new friendApi_1.FriendApi(rest);
     }
 }
 exports.TopluyoSDK = TopluyoSDK;

@@ -1,6 +1,23 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RestClient = void 0;
+exports.RestClient = exports.TopluyoApiError = void 0;
+class TopluyoApiError extends Error {
+    status;
+    data;
+    constructor(status, data) {
+        const message = typeof data === "object" &&
+            data !== null &&
+            "message" in data &&
+            typeof data.message === "string"
+            ? data.message
+            : `Topluyo API request failed with status ${status}`;
+        super(message);
+        this.status = status;
+        this.data = data;
+        this.name = "TopluyoApiError";
+    }
+}
+exports.TopluyoApiError = TopluyoApiError;
 class RestClient {
     baseUrl = "https://topluyo.com";
     token;
@@ -20,10 +37,27 @@ class RestClient {
             },
             body: JSON.stringify(body)
         });
-        if (!response.ok) {
-            throw new Error(`İstek başarısız. ${response.status}`);
+        const text = await response.text();
+        let data = null;
+        if (text) {
+            try {
+                data = JSON.parse(text);
+            }
+            catch {
+                data = text;
+            }
         }
-        return response.json();
+        if (!response.ok) {
+            let data;
+            try {
+                data = await response.json();
+            }
+            catch {
+                data = null;
+            }
+            throw new TopluyoApiError(response.status, data);
+        }
+        return data;
     }
 }
 exports.RestClient = RestClient;

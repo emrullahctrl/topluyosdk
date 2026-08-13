@@ -14,6 +14,9 @@ import { TeamApi } from "./teamApi";
 import { TestApi } from "./testApi";
 import { TurboApi } from "./turboApi";
 import { UserApi } from "./userApi";
+import { CrewApi } from "./crewApi";
+import { FavoriteApi } from "./favoriteApi";
+import { FriendApi } from "./friendApi";
 export declare class TopluyoSDK {
     channel: ChannelApi;
     group: GroupApi;
@@ -31,5 +34,8 @@ export declare class TopluyoSDK {
     test: TestApi;
     turbo: TurboApi;
     user: UserApi;
+    crew: CrewApi;
+    favorite: FavoriteApi;
+    friend: FriendApi;
     constructor(token: string);
 }

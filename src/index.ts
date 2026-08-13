@@ -1,5 +1,5 @@
 export { TopluyoSDK } from "./Client";
 
-export { RestClient } from "./RestClient";
+export { RestClient, TopluyoApiError  } from "./RestClient";
 
 export * from "./types";

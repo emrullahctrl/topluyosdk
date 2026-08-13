@@ -43,7 +43,7 @@ class CrewApi {
     async sort(groupId, crewIds) {
         return this.rest.post("/!api/crew/sort", {
             group_id: groupId,
-            crew_ids: crewIds
+            crew_ids: crewIds.join(",")
         });
     }
 }

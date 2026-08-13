@@ -14,9 +14,10 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RestClient = exports.TopluyoSDK = void 0;
+exports.TopluyoApiError = exports.RestClient = exports.TopluyoSDK = void 0;
 var Client_1 = require("./Client");
 Object.defineProperty(exports, "TopluyoSDK", { enumerable: true, get: function () { return Client_1.TopluyoSDK; } });
 var RestClient_1 = require("./RestClient");
 Object.defineProperty(exports, "RestClient", { enumerable: true, get: function () { return RestClient_1.RestClient; } });
+Object.defineProperty(exports, "TopluyoApiError", { enumerable: true, get: function () { return RestClient_1.TopluyoApiError; } });
 __exportStar(require("./types"), exports);

@@ -165,11 +165,10 @@ export class ChannelApi {
         });
     }
 
-    async sort(groupId: number, crewIds: number[] | string) {
-        const formattedIds = Array.isArray(crewIds) ? crewIds.join(",") : crewIds;
-        return this.rest.post("/!api/crew/sort", {
+    async sort(groupId: number, channelIds: number[]) {
+        return this.rest.post("/!api/channel/sort", {
             group_id: groupId,
-            crew_ids: formattedIds
+            channel_ids: channelIds.join(",")
         });
     }
 }

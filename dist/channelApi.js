@@ -51,11 +51,10 @@ class ChannelApi {
             channel_nick: channelNick
         });
     }
-    async sort(groupId, crewIds) {
-        const formattedIds = Array.isArray(crewIds) ? crewIds.join(",") : crewIds;
-        return this.rest.post("/!api/crew/sort", {
+    async sort(groupId, channelIds) {
+        return this.rest.post("/!api/channel/sort", {
             group_id: groupId,
-            crew_ids: formattedIds
+            channel_ids: channelIds.join(",")
         });
     }
 }

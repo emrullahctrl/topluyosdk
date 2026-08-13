@@ -41,10 +41,10 @@ export declare class GroupApi {
     list(): Promise<import("./types").ApiResponse<GroupData[]>>;
     online(groupId: number): Promise<import("./types").ApiResponse<number[]>>;
     popular(): Promise<import("./types").ApiResponse<GroupData[]>>;
-    set(groupId: number, options: any): Promise<import("./types").ApiResponse<unknown>>;
+    set(groupId: number, options: Record<string, unknown>): Promise<import("./types").ApiResponse<unknown>>;
     setHome(groupId: number, homeContent: string): Promise<import("./types").ApiResponse<unknown>>;
     setPermissions(groupId: number, options: GroupPermissionsOptions): Promise<import("./types").ApiResponse<unknown>>;
     setProfile(groupId: number, options: GroupProfileOptions): Promise<import("./types").ApiResponse<unknown>>;
     setSocials(groupId: number, options: GroupSocialsOptions): Promise<import("./types").ApiResponse<unknown>>;
-    sort(groupIds: number[] | string): Promise<import("./types").ApiResponse<unknown>>;
+    sort(groupIds: number[]): Promise<import("./types").ApiResponse<unknown>>;
 }

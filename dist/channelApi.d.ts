@@ -113,5 +113,5 @@ export declare class ChannelApi {
     show(groupNick: string, channelNick: string): Promise<import("./types").ApiResponse<ChannelShowData>>;
     showInfoById(channelId: number): Promise<import("./types").ApiResponse<ChannelShowData>>;
     showInfoByNick(groupNick: string, channelNick: string): Promise<import("./types").ApiResponse<ChannelShowData>>;
-    sort(groupId: number, crewIds: number[] | string): Promise<import("./types").ApiResponse<unknown>>;
+    sort(groupId: number, channelIds: number[]): Promise<import("./types").ApiResponse<unknown>>;
 }
